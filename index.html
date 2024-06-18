@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>rim</title>
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="flex col">
+  <menu id="letter" class="flex col gap">
+    <span class="thic mid">INBOX EMPTY</span>
+  </menu>
+
+  <menu class="flex col gap">
+    <label>Name: <input id="nameinput" size="18" autocomplete="off" placeholder="alias" value="John Rimworld" />
+    </label>
+    <div>
+      <label>
+        <p class="tall">Colonist food amount and diet (e.g., "4 * 1.6 simple 4.6 lavish")?</p>
+        <input id="mansinput" class="stamp w100" autocomplete="off" placeholder="food diet" value="4 * 1.6 simple 4.6 lavish" data-reggie="(\d+\s?\*\s?)?\d+(\.\d+)?\s?(paste|simple|fine|lavish)">
+      </label>
+    </div>
+    <div class="flex sb">
+      <div class="flex col">
+        <label>Growing period? <input id="periodinput" inputmode="numeric" min="1" max="60" value="60"
+            placeholder="days" size="1" autocomplete="off" /> of 60 days.
+        </label>
+        <label>Risk factor? φ = <input id="phiinput" inputmode="decimal" placeholder="risk" size="1" value="1"
+            autocomplete="off" /></label>
+        <label id="devilstrandtoggle" class="toggleclick" data-alt=">Yes, we are interested in growing the
+          Devil's Strand." data-state="false">
+          <span class="colorc">No</span>, we are <span class="colorc">not</span> interested in growing the
+          Devil's Strand.
+        </label>
+        <label id="hydrotoggle" class="toggleclick" data-alt=">Yes, we do utilize
+          hydrophonic farming techniques." data-state="false">
+          <span class="colorc">No</span>, we do <span class="colorc">not</span> utilize
+          hydrophonic farming techniques.
+        </label>
+      </div>
+    </div>
+    <div class="flex end">
+      <input class="thic" type="button" id="calcbutton" value="SEND" />
+    </div>
+  </menu>
+
+  <details>
+    <summary>notes</summary>
+    <pre>
+φ is a result coefficient.  I use 1.15 for adventure mode in easy climates.
+meals are vegetarian
+harvest values are from the wiki
+hospital prison 9x9
+bedroom 8x7
+farm 13x13
+throne 17x10 shrink to 80?
+workshop 9x18
+storage 17x8
+lab 8x15
+kid room 6x7
+kitchen 5x6 cramped
+butcher 4x5 workshop
+power room?
+cryo room?
+pod room?
+dining / throne split?
+temp: 18-24
+</pre>
+  </details>
+  <div id="dev"></div>
+  <script type="module" src="./main.js"></script>
+</body>
+
+
+</html>
